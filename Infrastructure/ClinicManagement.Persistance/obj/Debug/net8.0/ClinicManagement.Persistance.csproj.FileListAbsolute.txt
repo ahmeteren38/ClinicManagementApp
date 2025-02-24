@@ -1,0 +1,12 @@
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\bin\Debug\net8.0\ClinicManagement.Persistance.deps.json
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\bin\Debug\net8.0\ClinicManagement.Persistance.dll
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\bin\Debug\net8.0\ClinicManagement.Persistance.pdb
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\ClinicManagement.Persistance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\ClinicManagement.Persistance.AssemblyInfoInputs.cache
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\ClinicManagement.Persistance.AssemblyInfo.cs
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\ClinicManagement.Persistance.csproj.CoreCompileInputs.cache
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\ClinicManagement.Persistance.sourcelink.json
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\ClinicManagement.Persistance.dll
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\refint\ClinicManagement.Persistance.dll
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\ClinicManagement.Persistance.pdb
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\ref\ClinicManagement.Persistance.dll

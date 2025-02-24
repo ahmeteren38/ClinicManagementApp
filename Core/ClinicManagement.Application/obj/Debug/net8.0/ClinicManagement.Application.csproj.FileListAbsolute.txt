@@ -8,6 +8,7 @@ C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Application\o
 C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Application\obj\Debug\net8.0\ClinicManagement.Application.AssemblyInfoInputs.cache
 C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Application\obj\Debug\net8.0\ClinicManagement.Application.AssemblyInfo.cs
 C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Application\obj\Debug\net8.0\ClinicManagement.Application.csproj.CoreCompileInputs.cache
+C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Application\obj\Debug\net8.0\ClinicManagement.Application.sourcelink.json
 C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Application\obj\Debug\net8.0\ClinicMa.5CCDC83B.Up2Date
 C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Application\obj\Debug\net8.0\ClinicManagement.Application.dll
 C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Application\obj\Debug\net8.0\refint\ClinicManagement.Application.dll

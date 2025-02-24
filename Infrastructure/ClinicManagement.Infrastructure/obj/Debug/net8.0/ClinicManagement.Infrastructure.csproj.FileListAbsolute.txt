@@ -1,0 +1,12 @@
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Infrastructure\bin\Debug\net8.0\ClinicManagement.Infrastructure.deps.json
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Infrastructure\bin\Debug\net8.0\ClinicManagement.Infrastructure.dll
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Infrastructure\bin\Debug\net8.0\ClinicManagement.Infrastructure.pdb
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Infrastructure\obj\Debug\net8.0\ClinicManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Infrastructure\obj\Debug\net8.0\ClinicManagement.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Infrastructure\obj\Debug\net8.0\ClinicManagement.Infrastructure.AssemblyInfo.cs
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Infrastructure\obj\Debug\net8.0\ClinicManagement.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Infrastructure\obj\Debug\net8.0\ClinicManagement.Infrastructure.sourcelink.json
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Infrastructure\obj\Debug\net8.0\ClinicManagement.Infrastructure.dll
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Infrastructure\obj\Debug\net8.0\refint\ClinicManagement.Infrastructure.dll
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Infrastructure\obj\Debug\net8.0\ClinicManagement.Infrastructure.pdb
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Infrastructure\obj\Debug\net8.0\ref\ClinicManagement.Infrastructure.dll

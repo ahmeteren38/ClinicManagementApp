@@ -1,7 +1,3 @@
-
-using ClinicManagement.DAL.Context;
-using Microsoft.EntityFrameworkCore;
-
 namespace ClinicManagement.WebAPI
 {
     public class Program
@@ -26,8 +22,8 @@ namespace ClinicManagement.WebAPI
                 app.UseSwaggerUI();
             }
 
-            builder.Services.AddDbContext<ClinicManagementDbContext>(opt =>
-            opt.UseSqlServer(builder.Configuration.GetConnectionString("ClinicManagementDB")));
+            //builder.Services.AddDbContext<ClinicManagementDbContext>(opt =>
+            //opt.UseSqlServer(builder.Configuration.GetConnectionString("ClinicManagementDB")));
 
             app.UseHttpsRedirection();
 

@@ -5,6 +5,7 @@ C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Domain\obj\De
 C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Domain\obj\Debug\net8.0\ClinicManagement.Domain.AssemblyInfoInputs.cache
 C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Domain\obj\Debug\net8.0\ClinicManagement.Domain.AssemblyInfo.cs
 C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Domain\obj\Debug\net8.0\ClinicManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Domain\obj\Debug\net8.0\ClinicManagement.Domain.sourcelink.json
 C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Domain\obj\Debug\net8.0\ClinicManagement.Domain.dll
 C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Domain\obj\Debug\net8.0\refint\ClinicManagement.Domain.dll
 C:\Users\aec06\source\repos\ClinicManagement\Core\ClinicManagement.Domain\obj\Debug\net8.0\ClinicManagement.Domain.pdb
