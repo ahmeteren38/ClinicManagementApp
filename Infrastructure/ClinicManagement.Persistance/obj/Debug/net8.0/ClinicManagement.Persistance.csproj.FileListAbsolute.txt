@@ -10,3 +10,11 @@ C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Per
 C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\refint\ClinicManagement.Persistance.dll
 C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\ClinicManagement.Persistance.pdb
 C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\ref\ClinicManagement.Persistance.dll
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\bin\Debug\net8.0\ClinicManagement.Application.dll
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\bin\Debug\net8.0\ClinicManagement.Domain.dll
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\bin\Debug\net8.0\ClinicManagement.Application.pdb
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\bin\Debug\net8.0\ClinicManagement.Domain.pdb
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\ClinicManagement.Persistance.csproj.AssemblyReference.cache
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\ClinicMa.EFAC1C6A.Up2Date
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\bin\Debug\net8.0\ClinicManagement.Persistance.runtimeconfig.json
+C:\Users\aec06\source\repos\ClinicManagement\Infrastructure\ClinicManagement.Persistance\obj\Debug\net8.0\ClinicManagement.Persistance.genruntimeconfig.cache

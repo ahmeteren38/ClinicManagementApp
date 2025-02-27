@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClinicManagement.Domain.Entities.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +7,11 @@ using System.Threading.Tasks;
 
 namespace ClinicManagement.Domain.Entities
 {
-    public class Clinic
+    public class Clinic : BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
-        public List<Doctor> Doctors { get; set; }
-        public Hospital Hospital { get; set; }
-        public int HospitalId { get; set; }
+        public List<Employee> Employees { get; set; }
+        public List<Patient> Patients { get; set; }
 
     }
 }

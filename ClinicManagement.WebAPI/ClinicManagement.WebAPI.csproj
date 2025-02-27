@@ -20,9 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClinicManagement.DAL\ClinicManagement.DAL.csproj" />
     <ProjectReference Include="..\Core\ClinicManagement.Application\ClinicManagement.Application.csproj" />
-    <ProjectReference Include="..\Core\ClinicManagement.Domain\ClinicManagement.Domain.csproj" />
+    <ProjectReference Include="..\Infrastructure\ClinicManagement.Infrastructure\ClinicManagement.Infrastructure.csproj" />
+    <ProjectReference Include="..\Infrastructure\ClinicManagement.Persistance\ClinicManagement.Persistance.csproj" />
   </ItemGroup>
 
 </Project>
