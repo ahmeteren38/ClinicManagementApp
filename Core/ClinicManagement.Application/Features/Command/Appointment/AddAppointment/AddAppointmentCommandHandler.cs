@@ -1,5 +1,8 @@
-﻿using ClinicManagement.Application.Abstractions.Services;
+﻿using ClinicManagement.Application.Constans;
+using ClinicManagement.Application.DTOs.Appointment;
+using ClinicManagement.Application.Repositories;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,20 +13,69 @@ namespace ClinicManagement.Application.Features.Command.Appointment.AddAppointme
 {
     public class AddAppointmentCommandHandler : IRequestHandler<AddAppointmentCommandRequest, AddAppointmentCommandResponse>
     {
-        IAppointmentService _appointmentService;
+        readonly IPatientReadRepository _petientReadRepository;
+        readonly IClinicReadRepository _clinicReadRepository;
+        readonly IEmployeeReadRepository _employeeReadRepository;
+        readonly IDiseaseReadRepository _diseaseReadRepository;
+        readonly IAppointmentWriteRepository _appointmentWriteRepository;
 
-        public AddAppointmentCommandHandler(IAppointmentService appointmentService)
+        public AddAppointmentCommandHandler(IAppointmentWriteRepository appointmentWriteRepository,
+            IPatientReadRepository petientReadRepository,
+            IClinicReadRepository clinicReadRepository,
+            IDiseaseReadRepository diseaseReadRepository,
+            IEmployeeReadRepository employeeReadRepository)
         {
-            _appointmentService = appointmentService;
+            _appointmentWriteRepository = appointmentWriteRepository;
+            _petientReadRepository = petientReadRepository;
+            _clinicReadRepository = clinicReadRepository;
+            _diseaseReadRepository = diseaseReadRepository;
+            _employeeReadRepository = employeeReadRepository;
         }
 
         public async Task<AddAppointmentCommandResponse> Handle(AddAppointmentCommandRequest request, CancellationToken cancellationToken)
         {
-           await _appointmentService.AddAppointment(new()
-           {
-               AppointmentDate = request.AppointmentDate,
-           });
-            return new();
+
+            var patient = await _petientReadRepository.GetAll().Where(p => p.Id.Equals(request.PatientId)).FirstOrDefaultAsync();
+            if (patient == null)
+            {
+                throw new Exception(BussinessConstants.PatientCouldNotFind);
+            }
+
+            var clinic = await _clinicReadRepository.GetAll().Where(c => c.Id == request.ClinicId).FirstOrDefaultAsync();
+            if (clinic == null) 
+            {
+                throw new Exception(BussinessConstants.ClinicCouldNotFind);
+            }
+
+            var employee = await _employeeReadRepository.GetAll().Where(e => e.Id == request.EmployeeId).FirstOrDefaultAsync();
+            if (employee == null)
+            {
+                throw new Exception(BussinessConstants.EmployeeCouldNotFind);
+            }
+
+            var disease = await _diseaseReadRepository.GetAll().Where(d => d.Id == request.DiseaseId).FirstOrDefaultAsync();
+            if (disease == null) 
+            {
+                throw new Exception(BussinessConstants.DiseaseCouldNotFind);
+            }
+
+            var result = await _appointmentWriteRepository.AddAsync(new()
+            {
+                AppointmentDate = request.AppointmentDate,
+                PatientId = request.PatientId,
+                ClinicId = request.ClinicId,
+                Description = request.Description,
+                EmployeeId = request.EmployeeId,
+                DiseaseId = request.DiseaseId
+            });
+
+            if (result == null)
+            {
+                throw new Exception(BussinessConstants.AppointmentCouldNotAdd);
+            }
+
+            await _appointmentWriteRepository.SaveAsync();
+            return new() { Message = "Appoinment succesfuly created", Succeded = true };
         }
     }
 }

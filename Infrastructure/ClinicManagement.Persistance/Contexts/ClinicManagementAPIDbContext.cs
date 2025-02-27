@@ -22,15 +22,25 @@ namespace ClinicManagement.Persistance.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Appointment ve Patient arasında bir one-to-one ilişki
             modelBuilder.Entity<Appointment>()
-                .HasOne(a => a.Patient) // Appointment bir Patient'e sahip
-                .WithOne(p => p.Appointment) // Patient bir Appointment'a sahip
-                .HasForeignKey<Appointment>(a => a.PatientId); // AppointmentId foreign key olarak belirleniyor
+                .HasOne(a => a.Employee)
+                .WithMany(e => e.Appointments)
+                .HasForeignKey(a => a.EmployeeId)
+                .OnDelete(DeleteBehavior.NoAction);  // Çakışmayı önler
 
-            // Patient modeli üzerinde başka bir foreign key tanımlamaya gerek yok
-            // Çünkü Appointment'daki PatientId zaten bu ilişkiyi kuruyor
+            modelBuilder.Entity<Appointment>()
+                .HasOne(a => a.Clinic)
+                .WithMany()
+                .HasForeignKey(a => a.ClinicId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Appointment>()
+                .HasOne(a => a.Patient)
+                .WithMany()
+                .HasForeignKey(a => a.PatientId)
+                .OnDelete(DeleteBehavior.NoAction);
         }
+
     }
 
 

@@ -10,7 +10,11 @@ namespace ClinicManagement.Application.Features.Command.Appointment.AddAppointme
 {
     public class AddAppointmentCommandRequest : IRequest<AddAppointmentCommandResponse>
     {
-        public int AppointmentId { get; set; }
         public DateTime AppointmentDate { get; set; }
+        public int PatientId { get; set; }
+        public int ClinicId { get; set; }
+        public string Description { get; set; }
+        public int EmployeeId { get; set; }
+        public int DiseaseId { get; set; }
     }
 }

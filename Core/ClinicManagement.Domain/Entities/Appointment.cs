@@ -10,10 +10,14 @@ namespace ClinicManagement.Domain.Entities
     public class Appointment : BaseEntity
     {
         public DateTime AppointmentDate { get; set; }
-        public DateTime? AppointmentUpdatedDate { get; set; }
-        public DateTime? AppointmentDeletedDate { get; set; }
         public Patient Patient { get; set; }
         public int PatientId { get; set; }
-
+        public Clinic Clinic { get; set; }
+        public int ClinicId { get; set; }
+        public string Description { get; set; }
+        public Employee Employee { get; set; }
+        public int EmployeeId { get; set; }
+        public Disease Disease { get; set; }
+        public int DiseaseId { get; set; }
     }
 }

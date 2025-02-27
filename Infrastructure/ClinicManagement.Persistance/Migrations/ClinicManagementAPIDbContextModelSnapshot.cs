@@ -33,19 +33,31 @@ namespace ClinicManagement.Persistance.Migrations
                     b.Property<DateTime>("AppointmentDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("AppointmentDeletedDate")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("ClinicId")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime?>("AppointmentUpdatedDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DiseaseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
 
                     b.Property<int>("PatientId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PatientId")
-                        .IsUnique();
+                    b.HasIndex("ClinicId");
+
+                    b.HasIndex("DiseaseId");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("PatientId");
 
                     b.ToTable("Appointments");
                 });
@@ -57,6 +69,18 @@ namespace ClinicManagement.Persistance.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GSM")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -83,7 +107,12 @@ namespace ClinicManagement.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("PatientId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("PatientId");
 
                     b.ToTable("Diseases");
                 });
@@ -102,10 +131,7 @@ namespace ClinicManagement.Persistance.Migrations
                     b.Property<int>("ClinicId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("EndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Gender")
+                    b.Property<string>("IdentityNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -116,12 +142,6 @@ namespace ClinicManagement.Persistance.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("Salary")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("StartedDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Surname")
                         .IsRequired()
@@ -146,9 +166,6 @@ namespace ClinicManagement.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("AppointmentId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("Birthday")
                         .HasColumnType("datetime2");
 
@@ -167,10 +184,7 @@ namespace ClinicManagement.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("Height")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("IdNumber")
+                    b.Property<string>("IdentityNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -186,9 +200,6 @@ namespace ClinicManagement.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("Weight")
-                        .HasColumnType("bigint");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ClinicId");
@@ -196,30 +207,46 @@ namespace ClinicManagement.Persistance.Migrations
                     b.ToTable("Patients");
                 });
 
-            modelBuilder.Entity("DiseasePatient", b =>
-                {
-                    b.Property<int>("DiseasesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PatientsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("DiseasesId", "PatientsId");
-
-                    b.HasIndex("PatientsId");
-
-                    b.ToTable("DiseasePatient");
-                });
-
             modelBuilder.Entity("ClinicManagement.Domain.Entities.Appointment", b =>
                 {
-                    b.HasOne("ClinicManagement.Domain.Entities.Patient", "Patient")
-                        .WithOne("Appointment")
-                        .HasForeignKey("ClinicManagement.Domain.Entities.Appointment", "PatientId")
+                    b.HasOne("ClinicManagement.Domain.Entities.Clinic", "Clinic")
+                        .WithMany()
+                        .HasForeignKey("ClinicId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("ClinicManagement.Domain.Entities.Disease", "Disease")
+                        .WithMany()
+                        .HasForeignKey("DiseaseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ClinicManagement.Domain.Entities.Employee", "Employee")
+                        .WithMany("Appointments")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("ClinicManagement.Domain.Entities.Patient", "Patient")
+                        .WithMany()
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Clinic");
+
+                    b.Navigation("Disease");
+
+                    b.Navigation("Employee");
+
                     b.Navigation("Patient");
+                });
+
+            modelBuilder.Entity("ClinicManagement.Domain.Entities.Disease", b =>
+                {
+                    b.HasOne("ClinicManagement.Domain.Entities.Patient", null)
+                        .WithMany("Diseases")
+                        .HasForeignKey("PatientId");
                 });
 
             modelBuilder.Entity("ClinicManagement.Domain.Entities.Employee", b =>
@@ -244,21 +271,6 @@ namespace ClinicManagement.Persistance.Migrations
                     b.Navigation("Clinic");
                 });
 
-            modelBuilder.Entity("DiseasePatient", b =>
-                {
-                    b.HasOne("ClinicManagement.Domain.Entities.Disease", null)
-                        .WithMany()
-                        .HasForeignKey("DiseasesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ClinicManagement.Domain.Entities.Patient", null)
-                        .WithMany()
-                        .HasForeignKey("PatientsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("ClinicManagement.Domain.Entities.Clinic", b =>
                 {
                     b.Navigation("Employees");
@@ -266,10 +278,14 @@ namespace ClinicManagement.Persistance.Migrations
                     b.Navigation("Patients");
                 });
 
+            modelBuilder.Entity("ClinicManagement.Domain.Entities.Employee", b =>
+                {
+                    b.Navigation("Appointments");
+                });
+
             modelBuilder.Entity("ClinicManagement.Domain.Entities.Patient", b =>
                 {
-                    b.Navigation("Appointment")
-                        .IsRequired();
+                    b.Navigation("Diseases");
                 });
 #pragma warning restore 612, 618
         }

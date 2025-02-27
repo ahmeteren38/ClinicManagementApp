@@ -12,13 +12,11 @@ namespace ClinicManagement.Domain.Entities
         public string Name { get; set; }
         public string Surname { get; set; }
         public DateTime Birthday { get; set; }
-        public string Gender { get; set; }
-        public long Salary { get; set; }
+        public string IdentityNumber { get; set; }
         public string Job { get; set; }
-        public DateTime StartedDate { get; set; }
-        public DateTime? EndDate { get; set; }
         public Clinic Clinic { get; set; }
         public int ClinicId { get; set; }
+        public List<Appointment> Appointments { get; set; }
 
     }
 }

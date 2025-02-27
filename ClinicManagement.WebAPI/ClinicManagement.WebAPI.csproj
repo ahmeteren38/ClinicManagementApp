@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Core\ClinicManagement.Application\ClinicManagement.Application.csproj" />
     <ProjectReference Include="..\Infrastructure\ClinicManagement.Infrastructure\ClinicManagement.Infrastructure.csproj" />
     <ProjectReference Include="..\Infrastructure\ClinicManagement.Persistance\ClinicManagement.Persistance.csproj" />
