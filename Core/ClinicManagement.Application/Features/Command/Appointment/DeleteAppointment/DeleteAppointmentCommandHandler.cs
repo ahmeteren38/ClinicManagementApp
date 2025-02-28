@@ -12,8 +12,8 @@ namespace ClinicManagement.Application.Features.Command.Appointment.DeleteAppoin
 {
     public class DeleteAppointmentCommandHandler : IRequestHandler<DeleteAppointmentCommandRequest, DeleteAppointmentCommandResponse>
     {
-        IAppointmentReadRepository _appointmentReadRepository;
-        IAppointmentWriteRepository _appointmentWriteRepository;
+       readonly IAppointmentReadRepository _appointmentReadRepository;
+       readonly IAppointmentWriteRepository _appointmentWriteRepository;
 
         public DeleteAppointmentCommandHandler(IAppointmentReadRepository appointmentReadRepository, IAppointmentWriteRepository appointmentWriteRepository)
         {

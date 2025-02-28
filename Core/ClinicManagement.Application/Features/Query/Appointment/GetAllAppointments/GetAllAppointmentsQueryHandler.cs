@@ -7,7 +7,7 @@ namespace ClinicManagement.Application.Features.Query.Appointment.GetAllAppointm
 {
     public class GetAllAppointmentsQueryHandler : IRequestHandler<GetAllAppointmentsQueryRequest, GetAllAppointmentsQueryResponse>
     {
-        IAppointmentReadRepository _appointmentReadRepository;
+        readonly IAppointmentReadRepository _appointmentReadRepository;
 
         public GetAllAppointmentsQueryHandler(IAppointmentReadRepository appointmentReadRepository)
         {

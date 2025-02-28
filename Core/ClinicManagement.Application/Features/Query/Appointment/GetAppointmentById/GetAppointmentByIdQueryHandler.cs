@@ -12,7 +12,7 @@ namespace ClinicManagement.Application.Features.Query.Appointment.GetAppointment
 {
     public class GetAppointmentByIdQueryHandler : IRequestHandler<GetAppointmentByIdQueryRequest, GetAppointmentByIdQueryResponse>
     {
-        IAppointmentReadRepository _appointmentReadRepository;
+        readonly IAppointmentReadRepository _appointmentReadRepository;
 
         public GetAppointmentByIdQueryHandler(IAppointmentReadRepository appointmentReadRepository)
         {

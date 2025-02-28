@@ -23,6 +23,13 @@ namespace ClinicManagement.Application.Constans
 
         #region Clinic
         public const string ClinicCouldNotFind = "The clinic could not find";
+        public const string ClinicAlreadyExist = "The clinic already exist";
+        public const string ClinicCouldNotAdd = "The clinic could not add";
+        public const string ClinicAddedSuccessfully = "The clinic added successfully";
+        public const string ClinicDeletedSuccessfully = "The clinic deleted successfully";
+
+
+
         #endregion
 
         #region Employee

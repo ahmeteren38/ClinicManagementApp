@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClinicManagement.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+161943b51c8a54ba18fded17ad3454867d97e5b5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1627e61ea397e9a59a48e15040a3bc8e47d0626c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClinicManagement.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClinicManagement.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

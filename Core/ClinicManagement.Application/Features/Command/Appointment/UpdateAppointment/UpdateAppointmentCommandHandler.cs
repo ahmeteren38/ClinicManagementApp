@@ -7,12 +7,12 @@ namespace ClinicManagement.Application.Features.Command.Appointment.UpdateAppoin
 {
     public class UpdateAppointmentCommandHandler : IRequestHandler<UpdateAppointmentCommandRequest, UpdateAppointmentCommandResponse>
     {
-        IAppointmentReadRepository _appointmentReadRepository;
-        IAppointmentWriteRepository _appointmentWriteRepository;
-        IPatientReadRepository _patientReadRepository;
-        IClinicReadRepository _clinicReadRepository;
-        IEmployeeReadRepository _employeeReadRepository;
-        IDiseaseReadRepository _diseaseReadRepository;
+        readonly IAppointmentReadRepository _appointmentReadRepository;
+        readonly IAppointmentWriteRepository _appointmentWriteRepository;
+        readonly IPatientReadRepository _patientReadRepository;
+        readonly IClinicReadRepository _clinicReadRepository;
+        readonly IEmployeeReadRepository _employeeReadRepository;
+        readonly IDiseaseReadRepository _diseaseReadRepository;
 
         public UpdateAppointmentCommandHandler(IEmployeeReadRepository employeeReadRepository,
             IClinicReadRepository clinicReadRepository,
