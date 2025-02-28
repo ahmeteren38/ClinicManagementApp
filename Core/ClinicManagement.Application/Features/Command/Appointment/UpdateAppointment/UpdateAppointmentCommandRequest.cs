@@ -1,13 +1,15 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClinicManagement.Application.DTOs.Appointment
+namespace ClinicManagement.Application.Features.Command.Appointment.UpdateAppointment
 {
-    public class AddAppointmentRequestDTO
+    public class UpdateAppointmentCommandRequest : IRequest<UpdateAppointmentCommandResponse>
     {
+        public int AppointmentId { get; set; }
         public DateTime AppointmentDate { get; set; }
         public int PatientId { get; set; }
         public int ClinicId { get; set; }

@@ -16,6 +16,9 @@ namespace ClinicManagement.WebAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddDbContext<ClinicManagementAPIDbContext>(opt =>
+            opt.UseSqlServer(builder.Configuration.GetConnectionString("MSSQL")));
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -24,9 +27,6 @@ namespace ClinicManagement.WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
-            builder.Services.AddDbContext<ClinicManagementAPIDbContext>(opt =>
-            opt.UseSqlServer(builder.Configuration.GetConnectionString("ClinicManagementDB")));
 
             app.UseHttpsRedirection();
 

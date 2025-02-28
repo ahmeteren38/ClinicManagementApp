@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <Folder Include="Abstractions\Services\" />
-    <Folder Include="Features\Query\" />
+    <Folder Include="Features\Command\Clinic\AddClinic\" />
   </ItemGroup>
 
 </Project>

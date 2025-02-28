@@ -8,7 +8,7 @@ namespace ClinicManagement.Application.Features.Command.Appointment.AddAppointme
 {
     public class AddAppointmentCommandResponse
     {
-        public bool Succeded { get; set; }
+        public bool Succeeded { get; set; }
         public string Message { get; set; }
     }
 }

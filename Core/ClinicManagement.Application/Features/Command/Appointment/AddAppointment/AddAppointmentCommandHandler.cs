@@ -75,7 +75,7 @@ namespace ClinicManagement.Application.Features.Command.Appointment.AddAppointme
             }
 
             await _appointmentWriteRepository.SaveAsync();
-            return new() { Message = "Appoinment succesfuly created", Succeded = true };
+            return new() { Message = BussinessConstants.AppointmentSuccessfullyCreated, Succeeded = true };
         }
     }
 }
