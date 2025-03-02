@@ -2,8 +2,8 @@
 using ClinicManagement.Application.Features.Command.Appointment.DeleteAppointment;
 using ClinicManagement.Application.Features.Command.Appointment.UpdateAppointment;
 using ClinicManagement.Application.Features.Query.Appointment.GetAllAppointments;
+using ClinicManagement.Application.Features.Query.Appointment.GetAppointmentById;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClinicManagement.WebAPI.Controllers
@@ -19,32 +19,39 @@ namespace ClinicManagement.WebAPI.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost]
+        [HttpPost("[action]")]
         public async Task<IActionResult> AddAppointment(AddAppointmentCommandRequest addAppointmentCommandRequest)
         {
-          AddAppointmentCommandResponse response = await _mediator.Send(addAppointmentCommandRequest);
+            AddAppointmentCommandResponse response = await _mediator.Send(addAppointmentCommandRequest);
             return Ok(response);
         }
 
-        [HttpDelete]
+        [HttpDelete("[action]")]
         public async Task<IActionResult> DeleteAppointment(DeleteAppointmentCommandRequest deleteAppointmentCommandRequest)
         {
-           DeleteAppointmentCommandResponse response = await _mediator.Send(deleteAppointmentCommandRequest);
+            DeleteAppointmentCommandResponse response = await _mediator.Send(deleteAppointmentCommandRequest);
             return Ok(response);
         }
 
-        [HttpPut]
+        [HttpPut("[action]")]
         public async Task<IActionResult> UpdateAppointment(UpdateAppointmentCommandRequest updateAppointmentCommandRequest)
         {
-           UpdateAppointmentCommandResponse response = await _mediator.Send(updateAppointmentCommandRequest);
+            UpdateAppointmentCommandResponse response = await _mediator.Send(updateAppointmentCommandRequest);
             return Ok(response);
         }
 
-        [HttpGet]
+        [HttpGet("[action]")]
         public async Task<IActionResult> GetAllAppointments()
         {
             var response = await _mediator.Send(new GetAllAppointmentsQueryRequest());
             return Ok();
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetAppointmentById([FromQuery] GetAppointmentByIdQueryRequest getAppointmentByIdQueryRequest)
+        {
+           GetAppointmentByIdQueryResponse response = await _mediator.Send(getAppointmentByIdQueryRequest);
+            return Ok(response);
         }
     }
 }

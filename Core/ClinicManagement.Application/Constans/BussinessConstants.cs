@@ -27,9 +27,7 @@ namespace ClinicManagement.Application.Constans
         public const string ClinicCouldNotAdd = "The clinic could not add";
         public const string ClinicAddedSuccessfully = "The clinic added successfully";
         public const string ClinicDeletedSuccessfully = "The clinic deleted successfully";
-
-
-
+        public const string ClinicUpdatedSuccessfully = "The clinic updated successfully";
         #endregion
 
         #region Employee
@@ -38,6 +36,9 @@ namespace ClinicManagement.Application.Constans
 
         #region Disease
         public const string DiseaseCouldNotFind = "The disease could not find";
+        public const string DiseaseCouldNotAdd = "The disease could not add";
+        public const string DiseaseAlreadyExist = "The disease already exist";
+        public const string DiseaseSuccessfullyAdded = "The disease successfully added";
         #endregion
     }
 }

@@ -1,5 +1,10 @@
+using ClinicManagement.Application;
+using ClinicManagement.Persistance;
 using ClinicManagement.Persistance.Contexts;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace ClinicManagement.WebAPI
 {
@@ -12,6 +17,14 @@ namespace ClinicManagement.WebAPI
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            builder.Services.AddPersistenceServices();  // persistence katmanýný ekledik.
+            builder.Services.AddApplicationServices();
+
+            builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));//burayý kontrol et
+
+
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

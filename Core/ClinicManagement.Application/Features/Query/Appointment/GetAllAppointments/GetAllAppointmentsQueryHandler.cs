@@ -22,15 +22,15 @@ namespace ClinicManagement.Application.Features.Query.Appointment.GetAllAppointm
 
             foreach (var appointment in appointments)
             {
-                GetAllAppointmentsResponseDTO getAllAppointments = new GetAllAppointmentsResponseDTO
-                {
-                    AppointmentDate = appointment.AppointmentDate,
-                    PatientId = appointment.PatientId,
-                    ClinicId = appointment.ClinicId,
-                    EmployeeId = appointment.EmployeeId,
-                    Description = appointment.Description,
-                    DiseaseId = appointment.DiseaseId
-                };
+                GetAllAppointmentsResponseDTO getAllAppointments = new GetAllAppointmentsResponseDTO();
+
+                getAllAppointments.AppointmentDate = appointment.AppointmentDate;
+                getAllAppointments.PatientId = appointment.PatientId;
+                getAllAppointments.ClinicId = appointment.ClinicId;
+                getAllAppointments.EmployeeId = appointment.EmployeeId;
+                getAllAppointments.Description = appointment.Description;
+                getAllAppointments.DiseaseId = appointment.DiseaseId;
+                
 
                 appointmentList.Add(getAllAppointments);
             }

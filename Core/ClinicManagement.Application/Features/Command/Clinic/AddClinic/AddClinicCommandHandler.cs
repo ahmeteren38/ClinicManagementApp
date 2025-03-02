@@ -24,7 +24,7 @@ namespace ClinicManagement.Application.Features.Command.Clinic.AddClinic
 
         public async Task<AddClinicCommandResponse> Handle(AddClinicCommandRequest request, CancellationToken cancellationToken)
         {
-           var clinic = await _clinicReadRepository.GetAll().Where(c => c.Id == request.ClinicId).FirstOrDefaultAsync();
+           var clinic = await _clinicReadRepository.GetAll().Where(c => c.Name == request.Name).FirstOrDefaultAsync();
             if(clinic != null)
             {
                 throw new Exception(BussinessConstants.ClinicAlreadyExist);

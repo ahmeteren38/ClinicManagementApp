@@ -2,7 +2,7 @@
   {
     "ContainingType": "ClinicManagement.WebAPI.Controllers.AppointmentsController",
     "Method": "AddAppointment",
-    "RelativePath": "api/Appointments",
+    "RelativePath": "api/Appointments/AddAppointment",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "ClinicManagement.WebAPI.Controllers.AppointmentsController",
     "Method": "DeleteAppointment",
-    "RelativePath": "api/Appointments",
+    "RelativePath": "api/Appointments/DeleteAppointment",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -33,8 +33,34 @@
   },
   {
     "ContainingType": "ClinicManagement.WebAPI.Controllers.AppointmentsController",
+    "Method": "GetAllAppointments",
+    "RelativePath": "api/Appointments/GetAllAppointments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.AppointmentsController",
+    "Method": "GetAppointmentById",
+    "RelativePath": "api/Appointments/GetAppointmentById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AppointmentId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.AppointmentsController",
     "Method": "UpdateAppointment",
-    "RelativePath": "api/Appointments",
+    "RelativePath": "api/Appointments/UpdateAppointment",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -48,13 +74,93 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ClinicManagement.WebAPI.Controllers.AppointmentsController",
-    "Method": "GetAllAppointments",
-    "RelativePath": "api/Appointments",
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.ClinicsControllers",
+    "Method": "AddClinic",
+    "RelativePath": "api/ClinicsControllers/AddClinic",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addClinicCommandRequest",
+        "Type": "ClinicManagement.Application.Features.Command.Clinic.AddClinic.AddClinicCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.ClinicsControllers",
+    "Method": "DeleteClinic",
+    "RelativePath": "api/ClinicsControllers/DeleteClinic",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deleteClinicCommandRequest",
+        "Type": "ClinicManagement.Application.Features.Command.Clinic.DeleteClinic.DeleteClinicCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.ClinicsControllers",
+    "Method": "GetAllClinics",
+    "RelativePath": "api/ClinicsControllers/GetAllClinics",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.ClinicsControllers",
+    "Method": "GetClinicById",
+    "RelativePath": "api/ClinicsControllers/GetClinicById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ClinicId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.ClinicsControllers",
+    "Method": "UpdateClinic",
+    "RelativePath": "api/ClinicsControllers/UpdateClinic",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateClinicCommandRequest",
+        "Type": "ClinicManagement.Application.Features.Command.Clinic.UpdateClinic.UpdateClinicCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.DiseasesController",
+    "Method": "AddDisease",
+    "RelativePath": "api/Diseases/AddDisease",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addDiseaseCommandRequest",
+        "Type": "ClinicManagement.Application.Features.Command.Disease.AddDisease.AddDiseaseCommandRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]
