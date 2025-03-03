@@ -15,15 +15,23 @@ namespace ClinicManagement.Application.Features.Command.Disease.AddDisease
     {
         readonly IDiseaseReadRepository _diseaseReadRepository;
         readonly IDiseaseWriteRepository _diseaseWriteRepository;
+        readonly IPatientReadRepository _patientReadRepository;
 
-        public AddDiseaseCommandHandler(IDiseaseWriteRepository diseaseWriteRepository, IDiseaseReadRepository diseaseReadRepository)
+        public AddDiseaseCommandHandler(IDiseaseWriteRepository diseaseWriteRepository, IDiseaseReadRepository diseaseReadRepository, IPatientReadRepository patientReadRepository)
         {
             _diseaseWriteRepository = diseaseWriteRepository;
             _diseaseReadRepository = diseaseReadRepository;
+            _patientReadRepository = patientReadRepository;
         }
 
         public async Task<AddDiseaseCommandResponse> Handle(AddDiseaseCommandRequest request, CancellationToken cancellationToken)
         {
+            var patient = await _patientReadRepository.GetAll().Where(p => p.Id == request.PatientId).FirstOrDefaultAsync();
+            if (patient == null) 
+            {
+                throw new Exception(BussinessConstants.PatientCouldNotFind);
+            }
+
           var diesase = await _diseaseReadRepository.GetAll().Where(d => d.Name == request.Name).FirstOrDefaultAsync();
             if (diesase != null) 
             {
@@ -38,6 +46,7 @@ namespace ClinicManagement.Application.Features.Command.Disease.AddDisease
             {
                 Name = request.Name,
                 Description = request.Description,
+                PatientId = request.PatientId
             });
 
             if(result == null)
@@ -48,6 +57,8 @@ namespace ClinicManagement.Application.Features.Command.Disease.AddDisease
                     Succeeded = false,
                 };
             }
+
+           await _diseaseWriteRepository.SaveAsync();
 
             return new()
             {

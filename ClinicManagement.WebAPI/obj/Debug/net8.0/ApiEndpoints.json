@@ -98,9 +98,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "deleteClinicCommandRequest",
-        "Type": "ClinicManagement.Application.Features.Command.Clinic.DeleteClinic.DeleteClinicCommandRequest",
-        "IsRequired": true
+        "Name": "ClinicId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -158,6 +158,38 @@
       {
         "Name": "addDiseaseCommandRequest",
         "Type": "ClinicManagement.Application.Features.Command.Disease.AddDisease.AddDiseaseCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.DiseasesController",
+    "Method": "DeleteDisease",
+    "RelativePath": "api/Diseases/DeleteDisease",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deleteDiseaseCommandRequest",
+        "Type": "ClinicManagement.Application.Features.Command.Disease.DeleteDisease.DeleteDiseaseCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.DiseasesController",
+    "Method": "UpdateDisease",
+    "RelativePath": "api/Diseases/UpdateDisease",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateDiseaseCommandRequest",
+        "Type": "ClinicManagement.Application.Features.Command.Disease.UpdateDisease.UpdateDiseaseCommandRequest",
         "IsRequired": true
       }
     ],

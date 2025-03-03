@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClinicManagement.Persistance.Migrations
 {
     [DbContext(typeof(ClinicManagementAPIDbContext))]
-    [Migration("20250227195650_mig_1")]
-    partial class mig_1
+    [Migration("20250302211457_mig_2")]
+    partial class mig_2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -110,7 +110,7 @@ namespace ClinicManagement.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("PatientId")
+                    b.Property<int>("PatientId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -247,9 +247,13 @@ namespace ClinicManagement.Persistance.Migrations
 
             modelBuilder.Entity("ClinicManagement.Domain.Entities.Disease", b =>
                 {
-                    b.HasOne("ClinicManagement.Domain.Entities.Patient", null)
+                    b.HasOne("ClinicManagement.Domain.Entities.Patient", "Patient")
                         .WithMany("Diseases")
-                        .HasForeignKey("PatientId");
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("ClinicManagement.Domain.Entities.Employee", b =>

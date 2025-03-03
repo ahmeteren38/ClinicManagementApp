@@ -31,6 +31,7 @@ namespace ClinicManagement.Application.Features.Query.Clinic.GetAllClinics
                 getAllClinicsResponseDTO.Name = clinic.Name;
                 getAllClinicsResponseDTO.Address = clinic.Address;
                 getAllClinicsResponseDTO.City = clinic.City;
+                getAllClinicsResponseDTO.GSM = clinic.GSM;
 
                 clinicList.Add(getAllClinicsResponseDTO);
             }

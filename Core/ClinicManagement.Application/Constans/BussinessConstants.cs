@@ -37,8 +37,11 @@ namespace ClinicManagement.Application.Constans
         #region Disease
         public const string DiseaseCouldNotFind = "The disease could not find";
         public const string DiseaseCouldNotAdd = "The disease could not add";
+        public const string DiseaseCouldNotDelete = "The disease could not delete";
         public const string DiseaseAlreadyExist = "The disease already exist";
         public const string DiseaseSuccessfullyAdded = "The disease successfully added";
+        public const string DiseaseSuccessfullyDeleted = "The disease successfully deleted";
+        public const string DiseaseSuccessfullyUpdated = "The disease successfully updated";
         #endregion
     }
 }
