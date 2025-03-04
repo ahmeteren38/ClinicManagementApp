@@ -32,6 +32,11 @@ namespace ClinicManagement.Application.Constans
 
         #region Employee
         public const string EmployeeCouldNotFind = "The employee could not find";
+        public const string EmployeeAlreadyExist = "The employee already exist";
+        public const string EmployeeCouldNotAdd = "The employee could not add";
+        public const string EmployeeAddedSuccessfully = "The employee added successfully";
+        public const string EmployeeDeletedSuccessfully = "The employee deleted successfully";
+        public const string EmployeeUpdatedSuccessfully = "The employee updated successfully";
         #endregion
 
         #region Disease

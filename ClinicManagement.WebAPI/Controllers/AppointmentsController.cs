@@ -20,7 +20,7 @@ namespace ClinicManagement.WebAPI.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> AddAppointment(AddAppointmentCommandRequest addAppointmentCommandRequest)
+        public async Task<IActionResult> AddAppointment([FromBody] AddAppointmentCommandRequest addAppointmentCommandRequest)
         {
             AddAppointmentCommandResponse response = await _mediator.Send(addAppointmentCommandRequest);
             return Ok(response);

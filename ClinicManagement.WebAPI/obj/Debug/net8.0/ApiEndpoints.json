@@ -181,6 +181,32 @@
   },
   {
     "ContainingType": "ClinicManagement.WebAPI.Controllers.DiseasesController",
+    "Method": "GetAllDiseases",
+    "RelativePath": "api/Diseases/GetAllDiseases",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.DiseasesController",
+    "Method": "GetDiseaseById",
+    "RelativePath": "api/Diseases/GetDiseaseById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "DiseaseId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.DiseasesController",
     "Method": "UpdateDisease",
     "RelativePath": "api/Diseases/UpdateDisease",
     "HttpMethod": "PUT",
@@ -190,6 +216,80 @@
       {
         "Name": "updateDiseaseCommandRequest",
         "Type": "ClinicManagement.Application.Features.Command.Disease.UpdateDisease.UpdateDiseaseCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.EmployeesController",
+    "Method": "AddEmployee",
+    "RelativePath": "api/Employees/AddEmployee",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addEmployeeCommandRequest",
+        "Type": "ClinicManagement.Application.Features.Command.Employee.AddEmloyee.AddEmployeeCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.EmployeesController",
+    "Method": "DeleteEmployee",
+    "RelativePath": "api/Employees/DeleteEmployee",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deleteEmployeeCommandRequest",
+        "Type": "ClinicManagement.Application.Features.Command.Employee.DeleteEmployee.DeleteEmployeeCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.EmployeesController",
+    "Method": "GetAllEmployees",
+    "RelativePath": "api/Employees/GetAllEmployees",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.EmployeesController",
+    "Method": "GetEmployeeById",
+    "RelativePath": "api/Employees/GetEmployeeById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EmployeeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.EmployeesController",
+    "Method": "UpdateEmployee",
+    "RelativePath": "api/Employees/UpdateEmployee",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateEmployeeCommandRequest",
+        "Type": "ClinicManagement.Application.Features.Command.Employee.UpdateEmployee.UpdateEmployeeCommandRequest",
         "IsRequired": true
       }
     ],

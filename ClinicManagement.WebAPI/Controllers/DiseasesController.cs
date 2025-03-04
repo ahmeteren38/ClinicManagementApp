@@ -21,7 +21,7 @@ namespace ClinicManagement.WebAPI.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> AddDisease(AddDiseaseCommandRequest addDiseaseCommandRequest)
+        public async Task<IActionResult> AddDisease([FromBody] AddDiseaseCommandRequest addDiseaseCommandRequest)
         {
           AddDiseaseCommandResponse response = await _mediator.Send(addDiseaseCommandRequest);
             return Ok(response);
