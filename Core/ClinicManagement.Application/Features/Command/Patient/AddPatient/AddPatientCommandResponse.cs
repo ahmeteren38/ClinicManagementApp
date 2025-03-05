@@ -10,5 +10,8 @@ namespace ClinicManagement.Application.Features.Command.Patient.AddPatient
     {
         public bool Succeeded { get; set; }
         public string Message { get; set; }
+        public int PatientId { get; set; }
+        
     }
+
 }

@@ -32,6 +32,10 @@ namespace ClinicManagement.Application.Features.Command.Employee.AddEmloyee
                 throw new Exception(BussinessConstants.ClinicCouldNotFind);
             }
 
+            var lastEmployee = await _employeeReadRepository.GetAll().OrderByDescending(c => c.Id).FirstOrDefaultAsync();
+
+            var newEmployeeId = lastEmployee != null ? lastEmployee.Id + 1 : 1;
+
             var result = await _employeeWriteRepository.AddAsync(new()
             {
                 Name = request.Name,
@@ -53,6 +57,7 @@ namespace ClinicManagement.Application.Features.Command.Employee.AddEmloyee
             {
                 Message = BussinessConstants.EmployeeAddedSuccessfully,
                 Succeeded = true,
+                EmployeeId = newEmployeeId
             };
 
         }

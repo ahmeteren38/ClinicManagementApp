@@ -30,6 +30,10 @@ namespace ClinicManagement.Application.Features.Command.Clinic.AddClinic
                 throw new Exception(BussinessConstants.ClinicAlreadyExist);
             }
 
+            var lastClinic = await _clinicReadRepository.GetAll().OrderByDescending(c => c.Id).FirstOrDefaultAsync();
+
+            int newClinicId = lastClinic != null ? lastClinic.Id + 1 : 1;
+
            var result = await _clinicWriteRepository.AddAsync(new()
             {
               Name = request.Name,
@@ -48,7 +52,8 @@ namespace ClinicManagement.Application.Features.Command.Clinic.AddClinic
             return new()
             {
                 Message = BussinessConstants.ClinicAddedSuccessfully,
-                Succeeded = true
+                Succeeded = true,
+                ClinicId = newClinicId,
             };
 
 

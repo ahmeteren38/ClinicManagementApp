@@ -39,6 +39,10 @@ namespace ClinicManagement.Application.Features.Command.Patient.AddPatient
                 throw new Exception(BussinessConstants.PatientAlreadyExist);
             }
 
+            var lastPatient = await _patientReadRepository.GetAll().OrderByDescending(p => p.Id).FirstOrDefaultAsync();
+
+            int newPatientId = lastPatient != null ? lastPatient.Id + 1 : 1;
+
           var result = await _patientWriteRepository.AddAsync(new()
             {
                 Name = request.Name,
@@ -64,6 +68,7 @@ namespace ClinicManagement.Application.Features.Command.Patient.AddPatient
             {
                 Message = BussinessConstants.PatientSuccessfullyAdded,
                 Succeeded = true,
+                PatientId = newPatientId,
             };
         }
     }

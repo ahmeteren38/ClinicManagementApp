@@ -31,6 +31,7 @@ namespace ClinicManagement.Application.Features.Command.Clinic.DeleteClinic
                 throw new Exception(BussinessConstants.ClinicCouldNotFind);
             }
 
+
             _clinicWriteRepository.Remove(clinic);
 
            await _clinicWriteRepository.SaveAsync();
@@ -38,7 +39,7 @@ namespace ClinicManagement.Application.Features.Command.Clinic.DeleteClinic
             return new()
             {
                 Message = BussinessConstants.ClinicDeletedSuccessfully,
-                Succeeded = true,
+                Succeeded = true
             };
         }
     }

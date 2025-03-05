@@ -10,5 +10,6 @@ namespace ClinicManagement.Application.Features.Command.Employee.AddEmloyee
     {
         public bool Succeeded { get; set; }
         public string Message { get; set; }
+        public int EmployeeId { get; set; }
     }
 }

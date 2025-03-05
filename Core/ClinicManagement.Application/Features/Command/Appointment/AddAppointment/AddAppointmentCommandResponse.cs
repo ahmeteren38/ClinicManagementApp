@@ -10,5 +10,6 @@ namespace ClinicManagement.Application.Features.Command.Appointment.AddAppointme
     {
         public bool Succeeded { get; set; }
         public string Message { get; set; }
+        public int AppointmentId { get; set; }
     }
 }

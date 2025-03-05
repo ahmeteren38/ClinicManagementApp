@@ -10,5 +10,6 @@ namespace ClinicManagement.Application.Features.Command.Disease.AddDisease
     {
         public string Message { get; set; }
         public bool Succeeded { get; set; }
+        public int DiseaseId { get; set; }
     }
 }

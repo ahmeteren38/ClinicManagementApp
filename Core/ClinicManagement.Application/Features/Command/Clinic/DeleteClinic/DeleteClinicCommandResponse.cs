@@ -10,5 +10,6 @@ namespace ClinicManagement.Application.Features.Command.Clinic.DeleteClinic
     {
         public bool Succeeded { get; set; }
         public string Message { get; set; }
+        public int ClinicId { get; set; }
     }
 }

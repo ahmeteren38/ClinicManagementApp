@@ -42,7 +42,12 @@ namespace ClinicManagement.Application.Features.Command.Disease.AddDisease
                 };
             }
 
-          var result = await _diseaseWriteRepository.AddAsync(new()
+            var lastDisease = await _diseaseReadRepository.GetAll().OrderByDescending(d => d.Name).FirstOrDefaultAsync();
+
+            int newDiseaseId = lastDisease != null ? lastDisease.Id + 1 : 1;
+
+
+            var result = await _diseaseWriteRepository.AddAsync(new()
             {
                 Name = request.Name,
                 Description = request.Description,
@@ -64,6 +69,7 @@ namespace ClinicManagement.Application.Features.Command.Disease.AddDisease
             {
                 Message = BussinessConstants.DiseaseSuccessfullyAdded,
                 Succeeded = true,
+                DiseaseId = newDiseaseId
             };
         }
     }

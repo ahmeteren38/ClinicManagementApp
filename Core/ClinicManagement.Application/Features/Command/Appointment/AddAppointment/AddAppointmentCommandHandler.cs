@@ -18,18 +18,21 @@ namespace ClinicManagement.Application.Features.Command.Appointment.AddAppointme
         readonly IEmployeeReadRepository _employeeReadRepository;
         readonly IDiseaseReadRepository _diseaseReadRepository;
         readonly IAppointmentWriteRepository _appointmentWriteRepository;
+        readonly IAppointmentReadRepository _appointmentReadRepository;
 
         public AddAppointmentCommandHandler(IAppointmentWriteRepository appointmentWriteRepository,
             IPatientReadRepository petientReadRepository,
             IClinicReadRepository clinicReadRepository,
             IDiseaseReadRepository diseaseReadRepository,
-            IEmployeeReadRepository employeeReadRepository)
+            IEmployeeReadRepository employeeReadRepository,
+            IAppointmentReadRepository appointmentReadRepository)
         {
             _appointmentWriteRepository = appointmentWriteRepository;
             _petientReadRepository = petientReadRepository;
             _clinicReadRepository = clinicReadRepository;
             _diseaseReadRepository = diseaseReadRepository;
             _employeeReadRepository = employeeReadRepository;
+            _appointmentReadRepository = appointmentReadRepository;
         }
 
         public async Task<AddAppointmentCommandResponse> Handle(AddAppointmentCommandRequest request, CancellationToken cancellationToken)
@@ -59,6 +62,10 @@ namespace ClinicManagement.Application.Features.Command.Appointment.AddAppointme
                 throw new Exception(BussinessConstants.DiseaseCouldNotFind);
             }
 
+            var lastAppointment = await _appointmentReadRepository.GetAll().OrderByDescending(a => a.Id).FirstOrDefaultAsync();
+
+            int newAppointmentId = lastAppointment != null ? lastAppointment.Id + 1 : 1;
+
             var result = await _appointmentWriteRepository.AddAsync(new()
             {
                 AppointmentDate = request.AppointmentDate,
@@ -75,7 +82,12 @@ namespace ClinicManagement.Application.Features.Command.Appointment.AddAppointme
             }
 
             await _appointmentWriteRepository.SaveAsync();
-            return new() { Message = BussinessConstants.AppointmentSuccessfullyCreated, Succeeded = true };
+            return new() 
+            { 
+                Message = BussinessConstants.AppointmentSuccessfullyCreated,
+                Succeeded = true,
+                AppointmentId = newAppointmentId,
+            };
         }
     }
 }
