@@ -28,14 +28,14 @@ namespace ClinicManagement.WebAPI.Controllers
         }
 
         [HttpDelete("[action]")]
-        public async Task<IActionResult> DeleteDisease(DeleteDiseaseCommandRequest deleteDiseaseCommandRequest)
+        public async Task<IActionResult> DeleteDisease([FromQuery] DeleteDiseaseCommandRequest deleteDiseaseCommandRequest)
         {
            DeleteDiseaseCommandResponse response = await _mediator.Send(deleteDiseaseCommandRequest);
             return Ok(response);
         }
 
         [HttpPut("[action]")]
-        public async Task<IActionResult> UpdateDisease(UpdateDiseaseCommandRequest updateDiseaseCommandRequest)
+        public async Task<IActionResult> UpdateDisease([FromBody] UpdateDiseaseCommandRequest updateDiseaseCommandRequest)
         {
           UpdateDiseaseCommandResponse response = await _mediator.Send(updateDiseaseCommandRequest);
             return Ok(response);

@@ -28,7 +28,7 @@ namespace ClinicManagement.WebAPI.Controllers
         }
 
         [HttpDelete("[action]")]
-        public async Task<IActionResult> DeleteEmployee(DeleteEmployeeCommandRequest deleteEmployeeCommandRequest)
+        public async Task<IActionResult> DeleteEmployee([FromBody] DeleteEmployeeCommandRequest deleteEmployeeCommandRequest)
         {
           DeleteEmployeeCommandResponse response = await _mediator.Send(deleteEmployeeCommandRequest);
             return Ok(response);

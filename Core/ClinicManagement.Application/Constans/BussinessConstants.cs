@@ -19,6 +19,11 @@ namespace ClinicManagement.Application.Constans
 
         #region Patient
         public const string PatientCouldNotFind = "The patient could not find.";
+        public const string PatientAlreadyExist = "The patient already exist";
+        public const string PatientCouldNotAdd = "The patient could not add";
+        public const string PatientSuccessfullyAdded = "The patient successfully added";
+        public const string PatientSuccessfullyUpdated = "The patient successfully updated";
+        public const string PatientSuccessfullyDeleted = "The patient successfully deleted";
         #endregion
 
         #region Clinic

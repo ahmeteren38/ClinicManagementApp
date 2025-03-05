@@ -24,9 +24,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "deleteAppointmentCommandRequest",
-        "Type": "ClinicManagement.Application.Features.Command.Appointment.DeleteAppointment.DeleteAppointmentCommandRequest",
-        "IsRequired": true
+        "Name": "AppointmentId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -172,9 +172,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "deleteDiseaseCommandRequest",
-        "Type": "ClinicManagement.Application.Features.Command.Disease.DeleteDisease.DeleteDiseaseCommandRequest",
-        "IsRequired": true
+        "Name": "DiseaseId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -290,6 +290,80 @@
       {
         "Name": "updateEmployeeCommandRequest",
         "Type": "ClinicManagement.Application.Features.Command.Employee.UpdateEmployee.UpdateEmployeeCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.PatientsController",
+    "Method": "AddPatient",
+    "RelativePath": "api/Patients/AddPatient",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addPatientCommandRequest",
+        "Type": "ClinicManagement.Application.Features.Command.Patient.AddPatient.AddPatientCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.PatientsController",
+    "Method": "DeletePatient",
+    "RelativePath": "api/Patients/DeletePatient",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PatientId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.PatientsController",
+    "Method": "GetAllPatients",
+    "RelativePath": "api/Patients/GetAllPatients",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.PatientsController",
+    "Method": "GetPatientById",
+    "RelativePath": "api/Patients/GetPatientById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PatientId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicManagement.WebAPI.Controllers.PatientsController",
+    "Method": "UpdatePatient",
+    "RelativePath": "api/Patients/UpdatePatient",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updatePatientCommandRequest",
+        "Type": "ClinicManagement.Application.Features.Command.Patient.UpdatePatient.UpdatePatientCommandRequest",
         "IsRequired": true
       }
     ],

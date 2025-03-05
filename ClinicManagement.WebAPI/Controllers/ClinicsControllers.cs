@@ -24,7 +24,7 @@ namespace ClinicManagement.WebAPI.Controllers
         {
           AddClinicCommandResponse response = await _mediator.Send(addClinicCommandRequest);
             return Ok(response);
-        }
+        } 
 
         [HttpDelete("[action]")]
         public async Task<IActionResult> DeleteClinic([FromQuery] DeleteClinicCommandRequest deleteClinicCommandRequest)
