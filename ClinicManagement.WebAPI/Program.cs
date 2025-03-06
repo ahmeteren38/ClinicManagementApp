@@ -1,6 +1,8 @@
 using ClinicManagement.Application;
+using ClinicManagement.Application.Features.Command.Appointment.AddAppointment;
 using ClinicManagement.Persistance;
 using ClinicManagement.Persistance.Contexts;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +34,9 @@ namespace ClinicManagement.WebAPI
             builder.Services.AddDbContext<ClinicManagementAPIDbContext>(opt =>
             opt.UseSqlServer(builder.Configuration.GetConnectionString("MSSQL")));
 
+            builder.Services.AddControllers()
+        .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<AddAppointmentCommandRequest>());
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -40,6 +45,8 @@ namespace ClinicManagement.WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            
 
             app.UseHttpsRedirection();
 

@@ -184,3 +184,6 @@ C:\Users\aec06\source\repos\ClinicManagement\ClinicManagement.WebAPI\obj\Debug\n
 C:\Users\aec06\source\repos\ClinicManagement\ClinicManagement.WebAPI\obj\Debug\net8.0\ClinicManagement.WebAPI.pdb
 C:\Users\aec06\source\repos\ClinicManagement\ClinicManagement.WebAPI\obj\Debug\net8.0\ClinicManagement.WebAPI.genruntimeconfig.cache
 C:\Users\aec06\source\repos\ClinicManagement\ClinicManagement.WebAPI\obj\Debug\net8.0\ref\ClinicManagement.WebAPI.dll
+C:\Users\aec06\source\repos\ClinicManagement\ClinicManagement.WebAPI\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\aec06\source\repos\ClinicManagement\ClinicManagement.WebAPI\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\aec06\source\repos\ClinicManagement\ClinicManagement.WebAPI\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
