@@ -23,7 +23,7 @@ namespace ClinicManagement.Application.Validations.Clinic
             .NotEmpty().WithMessage("Clinic city can not be empty!");
 
             RuleFor(c => c.GSM)
-            .NotEmpty().WithMessage("GSM cannot be empty")
+            .NotEmpty().WithMessage("GSM can not be empty")
             .Matches(@"^\+?[1-9][0-9]{7,14}$").WithMessage("Invalid phone number format");
         }
     }

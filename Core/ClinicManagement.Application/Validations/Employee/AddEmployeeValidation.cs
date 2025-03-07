@@ -19,7 +19,9 @@ namespace ClinicManagement.Application.Validations.Employee
                 .NotEmpty().WithMessage("Employee surname can not be empty!");
 
             RuleFor(e => e.IdentityNumber)
-                .NotEmpty().WithMessage("Employee identity number can not be empty!").Length(11).WithMessage("Employee identity number must be 11 characters!").Matches(@"^[0-9]{11}$").WithMessage("Employee identity number must have numbers!");
+                .NotEmpty().WithMessage("Employee identity number can not be empty!")
+                .Length(11).WithMessage("Employee identity number must be 11 characters!")
+                .Matches(@"^[0-9]{11}$").WithMessage("Employee identity number must have numbers!");
 
             RuleFor(e => e.Birthday)
                 .NotEmpty().WithMessage("Employee birthday can not be empty!");
