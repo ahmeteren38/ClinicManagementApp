@@ -12,6 +12,9 @@ namespace ClinicManagement.Application.Validations.Clinic
     {
         public UpdateClinicValidation()
         {
+            RuleFor(c => c.ClinicId)
+                .NotEmpty().WithMessage("Clinic can not be empty!");
+
             RuleFor(c => c.Name)
                 .NotEmpty().WithMessage("Name can not be empty!")
                 .MinimumLength(3).WithMessage("Name must be more than 3 characters");

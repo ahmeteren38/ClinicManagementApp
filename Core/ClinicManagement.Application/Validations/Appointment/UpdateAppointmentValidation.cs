@@ -12,6 +12,9 @@ namespace ClinicManagement.Application.Validations.Appointment
     {
         public UpdateAppointmentValidation()
         {
+            RuleFor(c => c.AppointmentId)
+                .NotEmpty().WithMessage("Appointment can not be empty!");
+
             RuleFor(c => c.AppointmentDate)
                 .NotEmpty().WithMessage("Appointment Date can not be empty!");
 
